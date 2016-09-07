@@ -483,7 +483,7 @@ int main (int argc, char **argv) {
 			app.input.fds[1];
 	++app.input.maxfd;
 
-	BarMainLoop (&app);
+	BarMainLoop(&app);
 
 	if (app.input.fds[1] != -1) {
 		close (app.input.fds[1]);

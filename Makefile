@@ -81,11 +81,11 @@ endif
 ifeq (${DYNLINK},1)
 pianobar: ${PIANOBAR_OBJ} libpiano.so.0
 	${SILENTECHO} "  LINK  $@"
-	${SILENTCMD}${CC} -o $@ ${PIANOBAR_OBJ} -L. -lpiano ${ALL_LDFLAGS}
+	${SILENTCMD}${CC} -g -o $@ ${PIANOBAR_OBJ} -L. -lpiano ${ALL_LDFLAGS}
 else
 pianobar: ${PIANOBAR_OBJ} ${LIBPIANO_OBJ}
 	${SILENTECHO} "  LINK  $@"
-	${SILENTCMD}${CC} -o $@ ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${ALL_LDFLAGS}
+	${SILENTCMD}${CC}  -g -o $@ ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${ALL_LDFLAGS}
 endif
 
 # build shared and static libpiano
@@ -105,12 +105,12 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_OBJ}
 # build standard object files
 %.o: %.c
 	${SILENTECHO} "    CC  $<"
-	${SILENTCMD}${CC} -c -o $@ ${ALL_CFLAGS} -MMD -MF $*.d -MP $<
+	${SILENTCMD}${CC} -c -g -o $@ ${ALL_CFLAGS} -MMD -MF $*.d -MP $<
 
 # create position independent code (for shared libraries)
 %.lo: %.c
 	${SILENTECHO} "    CC  $< (PIC)"
-	${SILENTCMD}${CC} -c -fPIC -o $@ ${ALL_CFLAGS} -MMD -MF $*.d -MP $<
+	${SILENTCMD}${CC} -c -g -fPIC -o $@ ${ALL_CFLAGS} -MMD -MF $*.d -MP $<
 
 clean:
 	${SILENTECHO} " CLEAN"
