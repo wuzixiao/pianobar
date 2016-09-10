@@ -39,7 +39,8 @@ LIBPIANO_SRC:=\
 		${LIBPIANO_DIR}/piano.c \
 		${LIBPIANO_DIR}/request.c \
 		${LIBPIANO_DIR}/response.c \
-		${LIBPIANO_DIR}/list.c
+		${LIBPIANO_DIR}/list.c \
+		${LIBPIANO_DIR}/lyric.c
 LIBPIANO_OBJ:=${LIBPIANO_SRC:.c=.o}
 LIBPIANO_RELOBJ:=${LIBPIANO_SRC:.c=.lo}
 LIBPIANO_INCLUDE:=${LIBPIANO_DIR}

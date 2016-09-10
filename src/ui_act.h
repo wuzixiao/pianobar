@@ -62,5 +62,6 @@ BarUiActCallback(BarUiActVolUp);
 BarUiActCallback(BarUiActManageStation);
 BarUiActCallback(BarUiActVolReset);
 BarUiActCallback(BarUiActSettings);
+BarUiActCallback(BarUiActGetLyric);
 
 #endif /* SRC_UI_ACT_H_1FEFTC06 */
