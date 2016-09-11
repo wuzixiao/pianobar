@@ -886,14 +886,6 @@ BarUiActCallback(BarUiActManageStation) {
 BarUiActCallback(BarUiActGetLyric) {
 
 //    BarUiMsg (&app->settings, MSG_INFO, "Getting lyric");
-//	BarUiPrintStation (&app->settings, selStation);
-	/* print real station if quickmix */
-    /*
-	BarUiPrintSong (&app->settings, selSong,
-			selStation->isQuickMix ?
-			PianoFindStationById (app->ph.stations, selSong->stationId) :
-			NULL);
-    */
     ShowLyric(selSong->artist, selSong->title, &app->settings);
 
 }
